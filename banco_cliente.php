@@ -41,4 +41,20 @@ function inserir($conexao, $nome, $sexo, $email, $celular, $exames, $descricoes,
 
     return true; // Inserção bem-sucedida
 }
+// Função para excluir
+function excluir($conexao, $nome, $exame)
+{
+    $exame = mysqli_real_escape_string($conexao, $exame);
+
+    $query = "DELETE FROM cliente WHERE nome = '$nome' AND exame = '$exame'";
+    $resultado = mysqli_query($conexao, $query);
+
+    if ($resultado) {
+        return true; // Exclusão bem-sucedida
+    } else {
+        // Trate o erro, se houver
+        echo "Erro na exclusão: " . mysqli_error($conexao);
+        return false; // Falha na exclusão
+    }
+}
 ?>

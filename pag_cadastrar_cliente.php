@@ -9,8 +9,9 @@
     <style>
         h1 {
             text-align: center;
-            color: #3498db; /* Cor azul para o cabeçalho */
+            color: #3498db; 
             padding: 20px;
+            font-family: 'Helvetica', sans-serif;
         }
         form {
             max-width: 1000px;
@@ -26,39 +27,53 @@
             margin-bottom: 10px;
             padding: 10px;
             box-sizing: border-box;
+            font-family: 'Helvetica', sans-serif;
         }
         #examesContainer {
             margin-bottom: 20px;
         }
 
         button {
-            background-color: #3498db; /* Cor azul para o botão */
+            background-color: #3498db; 
             color: #ffffff;
             padding: 10px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-family: 'Helvetica', sans-serif;
         }
 
         button:hover {
-            background-color: #2980b9; /* Cor azul mais escura no hover */
+            background-color: #2980b9; 
+        }
+
+        /* Estilo para alinhar os botões de opção lado a lado */
+        label {
+            display: inline-block;
+            margin-right: 10px;
+            font-family: 'Helvetica', sans-serif;
         }
     
-        </style>
+    </style>
     <center>
         <h1>Cadastro de Paciente</h1>
         <!-- Formulário para cadastrar pacientes, com a ação direcionada para verificarCadastro.php via método POST -->
         <form action="verificarCadastro.php" method="post">
             <!-- Campos para inserção de dados pessoais do paciente -->
-            Nome Completo: <input type="text" name="txtnome" placeholder="Digite o Nome do Paciente"><br>
-            Sexo: <input type="text" name="txtsexo" placeholder="Sexo"><br>
-            Email: <input type="text" name="txtemail" placeholder="E-mail"><br>
+            Nome Completo : <input type="text" name="txtnome" placeholder="Digite o Nome do Paciente"><br>
+            
+            <!-- Substituído o campo de texto por botões de opção -->
+            Sexo: 
+            <label><input type="radio" name="txtsexo" value="Masculino">Masculino</label>
+            <label><input type="radio" name="txtsexo" value="Feminino">Feminino</label><br>
+            
+            E-mail: <input type="text" name="txtemail" placeholder="E-mail"><br>
             Celular: <input type="text" name="txtcelular" placeholder="Celular"><br>
 
             <!-- Container para os campos relacionados aos exames, permitindo a adição dinâmica de múltiplos exames -->
             <div id="examesContainer">
                 Exame: <input type="text" name="txtexame[]" placeholder="Exame">
-                Descrição: <input type="text" name="txtdescricao[]" placeholder="Descrição">
+                Descrição do Exame: <input type="text" name="txtdescricao[]" placeholder="Descrição">
                 Valor: <input type="text" name="txtvalor[]" placeholder="Valor">
                 <button type="button" onclick="adicionarExame()">Adicionar Exame</button><br>
             </div>
@@ -90,4 +105,3 @@
     </center>    
 </body>
 </html>
-
