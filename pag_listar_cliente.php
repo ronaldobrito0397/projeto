@@ -5,45 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de Pacientes</title>
 </head>
-<body>
-<style>
-    header {
-            background-color: #3498db;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 0;
-    }
-    h4 {
-            text-align: center;
-            color: #FF0000; 
-            padding: 20px;
-            font-family: 'Helvetica', sans-serif;
-        }
-    th {
-        background-color: #3498db;
-        color: #ffffff;
-        padding: 10px;
-        text-align: center;
-    }
+    <body>
+        <style>
+            header {
+                background-color: #3498db;
+                color: #ffffff;
+                text-align: center;
+                padding: 10px 0;
+            }
 
-    table {
-        width: 50%;
-        border-collapse: collapse;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+            h4 {
+                text-align: center;
+                color: #FF0000; 
+                padding: 20px;
+                font-family: 'Helvetica', sans-serif;
+            }
 
-    table, th, td {
-        border: 1px solid #696969;
-    }
+            th {
+                background-color: #3498db;
+                color: #ffffff;
+                padding: 10px;
+                text-align: center;
+            }
 
-    th, td {
-        padding: 10px;
-    }
-</style>
+            table {
+                width: 50%;
+                border-collapse: collapse;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
 
-</body>
+            table, th, td {
+                border: 1px solid #696969;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        </style>
+    </body>
 </html>
 
 
@@ -125,14 +126,14 @@ mysqli_close($conexao);
 </script>
 
 <script>
-        function confirmarExclusao(nome, exame) {
-            if (confirm("Tem certeza que deseja excluir o registro de " + nome + " para o exame " + exame + "?")) {
-                // Se o usuário confirmar, definir os valores nos campos ocultos
-                document.getElementById('nome_excluir').value = nome;
-                document.getElementById('exame_excluir').value = exame;
+    function confirmarExclusao(nome, exame) {
+        if (confirm("Tem certeza que deseja excluir o registro de " + nome + " para o exame " + exame + "?")) {
+            // Se o usuário confirmar, definir os valores nos campos ocultos
+            document.getElementById('nome_excluir').value = nome;
+            document.getElementById('exame_excluir').value = exame;
                 
-                // Submeter o formulário para processar a exclusão
-                document.getElementById('form_excluir').submit();
-            }
+            // Submeter o formulário para processar a exclusão
+            document.getElementById('form_excluir').submit();
         }
-    </script>
+    }
+</script>
