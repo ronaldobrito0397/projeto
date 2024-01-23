@@ -7,11 +7,11 @@
 </head>
     <body>
         <style>
-            header {
-                background-color: #3498db;
-                color: #ffffff;
+            h1 {
                 text-align: center;
-                padding: 10px 0;
+                color: #3498db; 
+                padding: 20px;
+                font-family: 'Helvetica', sans-serif;
             }
 
             h4 {
@@ -76,7 +76,7 @@ if (!$resultado) {
 }
 
 // Exibir os resultados em uma tabela HTML
-echo "<h1>Lista de Clientes</h1>";
+echo "<h1>Lista de Pacientes</h1>";
 echo "<form method='post' action='".$_SERVER['PHP_SELF']."'>";
 echo "<table border='1'>";
 echo "<tr>
