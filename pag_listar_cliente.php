@@ -44,6 +44,7 @@
                 padding: 10px;
             }
         </style>
+        <a href="index.html">Voltar a Tela Inicial</a>
     </body>
 </html>
 
@@ -76,7 +77,7 @@ if (!$resultado) {
 }
 
 // Exibir os resultados em uma tabela HTML
-echo "<h1>Lista de Pacientes</h1>";
+echo "<h1>Pacientes Cadastrados</h1>";
 echo "<form method='post' action='".$_SERVER['PHP_SELF']."'>";
 echo "<table border='1'>";
 echo "<tr>

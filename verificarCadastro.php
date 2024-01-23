@@ -33,6 +33,8 @@
         background-color: #2980b9; 
         }
     </style>
+    <a href="index.html">Voltar a Tela Inicial</a>
+</body>
 
 <?php
     include("conexao.php");
