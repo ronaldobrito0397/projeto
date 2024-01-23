@@ -1,3 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Pacientes</title>
+</head>
+<body>
+<style>
+    header {
+            background-color: #3498db;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+    }
+    h4 {
+            text-align: center;
+            color: #FF0000; 
+            padding: 20px;
+            font-family: 'Helvetica', sans-serif;
+        }
+    th {
+        background-color: #3498db;
+        color: #ffffff;
+        padding: 10px;
+        text-align: center;
+    }
+
+    table {
+        width: 50%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table, th, td {
+        border: 1px solid #696969;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+</style>
+
+</body>
+</html>
+
+
 <?php
 // Inclua o arquivo de conexão
 include 'conexao.php';
@@ -10,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['excluir'])) {
 
     // Chamada da função para excluir
     if (excluir($conexao, $nome, $exame)) {
-        echo 'Exclusão bem-sucedida!';
+        echo "<h4>Paciente Excluido.</h4>";
     } else {
         echo 'Falha na exclusão. Verifique o log de erros para mais informações.';
     }
@@ -74,3 +123,16 @@ mysqli_close($conexao);
         }
     }
 </script>
+
+<script>
+        function confirmarExclusao(nome, exame) {
+            if (confirm("Tem certeza que deseja excluir o registro de " + nome + " para o exame " + exame + "?")) {
+                // Se o usuário confirmar, definir os valores nos campos ocultos
+                document.getElementById('nome_excluir').value = nome;
+                document.getElementById('exame_excluir').value = exame;
+                
+                // Submeter o formulário para processar a exclusão
+                document.getElementById('form_excluir').submit();
+            }
+        }
+    </script>
