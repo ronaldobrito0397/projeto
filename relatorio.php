@@ -48,7 +48,6 @@
             margin-bottom: 10px; 
         }
 
-        /* Estilo para o placeholder do input */
         input[name="valor_min"]::placeholder,
         input[name="valor_max"]::placeholder,
         input[name="exame_pesquisa"]::placeholder {
@@ -99,7 +98,7 @@
 include 'conexao.php';
 include 'banco_cliente.php';
 
-// Verificar se o formulário de pesquisa foi enviado
+// Verifica se o formulário de pesquisa foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pesquisar'])) {
     $sexoPesquisa = isset($_POST['sexo']) ? $_POST['sexo'] : '';
     $valorMin = isset($_POST['valor_min']) ? floatval($_POST['valor_min']) : 0;

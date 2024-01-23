@@ -50,7 +50,6 @@
 
 
 <?php
-// Inclua o arquivo de conexão
 include 'conexao.php';
 include 'banco_cliente.php';
 
@@ -71,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['excluir'])) {
 $query = "SELECT * FROM cliente";
 $resultado = mysqli_query($conexao, $query);
 
-// Verificar se a consulta foi bem-sucedida
+// Verifica se a consulta foi bem-sucedida
 if (!$resultado) {
     die("Erro na consulta: " . mysqli_error($conexao));
 }
