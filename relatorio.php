@@ -11,16 +11,16 @@
             place-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f8f9fa; /* Cor de fundo */
+            background-color: #f8f9fa; 
         }
 
         #container {
             max-width: 800px;
             padding: 20px;
-            border: 1px solid #3498db; /* Cor da borda */
+            border: 1px solid #3498db;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-            background-color: #ffffff; /* Cor de fundo do container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff; 
         }
 
         h1 {
@@ -40,19 +40,19 @@
         input[name="valor_min"],
         input[name="valor_max"],
         input[name="exame_pesquisa"] {
-            padding: 10px 15px; /* Aumento do padding */
-            width: 100%; /* Aumento da largura para ocupar 100% do contêiner pai */
+            padding: 10px 15px; 
+            width: 100%; 
             font-size: 14px;
-            border: 1px solid #696969; /* Cor da borda */
+            border: 1px solid #696969; 
             border-radius: 5px;
-            margin-bottom: 10px; /* Adição de margem inferior para espaçamento */
+            margin-bottom: 10px; 
         }
 
         /* Estilo para o placeholder do input */
         input[name="valor_min"]::placeholder,
         input[name="valor_max"]::placeholder,
         input[name="exame_pesquisa"]::placeholder {
-            color: #696969; /* Cor do texto do placeholder */
+            color: #696969; 
             opacity: 0.7;
         }
 
@@ -96,7 +96,6 @@
 </html>
 
 <?php
-// Inclua o arquivo de conexão
 include 'conexao.php';
 include 'banco_cliente.php';
 
@@ -106,11 +105,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pesquisar'])) {
     $valorMin = isset($_POST['valor_min']) ? floatval($_POST['valor_min']) : 0;
     $valorMax = isset($_POST['valor_max']) ? floatval($_POST['valor_max']) : PHP_FLOAT_MAX;
 
-    // Consulta para recuperar registros da tabela cliente baseado no sexo e nos valores de exames selecionados
+    // Consulta para reuperar registros da tabela cliente baseado no sexo e nos valores de exames selecionados
     $query = "SELECT * FROM cliente WHERE sexo = '$sexoPesquisa' AND valor >= $valorMin AND valor <= $valorMax";
     $resultado = mysqli_query($conexao, $query);
 
-    // Verificar se a consulta foi bem-sucedida
+    // Verifica se a consulta foi bem-sucedida
     if (!$resultado) {
         die("Erro na consulta: " . mysqli_error($conexao));
     }
@@ -121,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pesquisar'])) {
     $query = "SELECT * FROM cliente WHERE exame = '$examePesquisa'";
     $resultado = mysqli_query($conexao, $query);
 
-    // Verificar se a consulta foi bem-sucedida
+    // Verifica se a consulta foi bem-sucedida
     if (!$resultado) {
         die("Erro na consulta: " . mysqli_error($conexao));
     }
@@ -130,13 +129,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pesquisar'])) {
     $query = "SELECT * FROM cliente";
     $resultado = mysqli_query($conexao, $query);
 
-    // Verificar se a consulta foi bem-sucedida
+    // Verifica se a consulta foi bem-sucedida
     if (!$resultado) {
         die("Erro na consulta: " . mysqli_error($conexao));
     }
 }
 
-// Iniciar a saída do relatório
+// Inicia a saída do relatório
 echo "<h1>Relatório de Clientes</h1>";
 
 // Formulário de pesquisa por sexo e valores de exames
